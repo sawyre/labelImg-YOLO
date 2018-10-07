@@ -1,7 +1,9 @@
 labelImg-YOLO
 =============
+
 .. image:: https://raw.githubusercontent.com/sawyre/labelImg-YOLO/master/demo/demo1.jpg
      :alt: Demo Image
+
 Необходимое програмное обеспечение
 ----------------------------------
 Ссылка на исходный код приложения, так же там приведена инструкция по установке:
