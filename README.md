@@ -1,8 +1,7 @@
 labelImg-YOLO
 =============
 
-.. image:: https://github.com/sawyre/labelImg-YOLO/blob/master/demo/demo1.jpg
-     :alt: Demo Image
+![demo image](https://github.com/sawyre/labelImg-YOLO/blob/master/demo/demo1.jpg)
 
 Необходимое програмное обеспечение
 ----------------------------------
