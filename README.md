@@ -23,6 +23,7 @@ Python 3 + Qt5
 6. python3 labelImg.py – запуск приложения из директории
 Ссылка на исходный код YOLO2, так же там приведено необходимое ПО, для ее запуска:
 https://github.com/experiencor/keras-yolo2
+
 Нужно для запуска авторазметки:
 ### Для версии GPU:
 -	Nvidia CUDA 8.0
