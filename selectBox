@@ -1,0 +1,58 @@
+def labelSelectionChanged(self):
+    item = self.currentItem()
+
+    def currentItem(self):
+        items = self.labelList.selectedItems()
+        if items:
+            return items[0]
+        return None
+
+    if item and self.canvas.editing():
+        self._noSelectionSlot = True
+        self.canvas.selectShape(self.itemsToShapes[item])
+
+    def selectShape(self, shape):
+        self.deSelectShape()
+        shape.selected = True
+        self.selectedShape = shape
+        self.setHiding()
+        self.selectionChanged.emit(True)
+        self.update()
+
+
+    def shapeSelectionChanged(self, selected=False):
+        if self._noSelectionSlot:
+            self._noSelectionSlot = False
+        else:
+            shape = self.canvas.selectedShape
+            if shape:
+                self.shapesToItems[shape].setSelected(True)
+            else:
+                self.labelList.clearSelection()
+        self.actions.delete.setEnabled(selected)
+        self.actions.copy.setEnabled(selected)
+        self.actions.edit.setEnabled(selected)
+        self.actions.shapeLineColor.setEnabled(selected)
+        self.actions.shapeFillColor.setEnabled(selected)
+
+    def deSelectShape(self):
+        if self.selectedShape:
+            self.selectedShape.selected = False
+            self.selectedShape = None
+            self.setHiding(False)
+            self.selectionChanged.emit(False)
+            self.update()
+
+    def selectShape(self, shape):
+        self.deSelectShape()
+        shape.selected = True
+        self.selectedShape = shape
+        self.setHiding()
+        self.selectionChanged.emit(True)
+        self.update()
+
+
+
+    shape = self.itemsToShapes[item]
+    # Add Chris
+    self.diffcButton.setChecked(shape.difficult)
